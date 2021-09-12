@@ -1,0 +1,39 @@
+#%RAML 1.0
+title: add-emp
+description: employee onboarding api
+baseUri: http://localhost:8081/emp-sapi/
+/add-empolyee:
+  post:
+    body:
+      application/json:
+        example:
+          {
+            "empid": 12345,
+	          "empname": "ram",
+	          "empstatus": "A"
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "status": 200,
+                "message": "Success"
+              }
+      500:
+        body:
+          application/json:
+            example:
+              {
+                "status": 500,
+                "message": "Internal server down"
+              }
+      502:
+        body:
+          application/json:
+            example:
+              {
+               "status": 502,
+               "message": "bad gateway"
+              }

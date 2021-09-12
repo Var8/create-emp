@@ -1,0 +1,7 @@
+http:
+ port: "8081"
+ host: "localhost"
+db:
+ port: "3306"
+ username: "root"
+ password: "8978153531@aA"
