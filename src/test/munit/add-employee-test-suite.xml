@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="add-employee-test-suite.xml" />
+	<munit:test name="add-employee-test-suite-add-empolyeeTest" doc:id="7c5049b5-754c-4360-9283-34d88d7f9bda" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to add-empolyee" doc:id="373e9bc8-8fa4-4d87-b2ed-e2dbf938266a" name="add-empolyee"/>
+		</munit:execution>
+		<munit:validation >
+			<logger level="INFO" doc:name="Logger" doc:id="84916cbc-a915-47f7-bfa4-c716ccb71014" message="#[payload]"/>
+			<munit-tools:assert doc:name="Assert payload not null" doc:id="36cadf50-51b2-4b32-8176-7c03b51ddaf4" />
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
